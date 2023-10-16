@@ -1,5 +1,6 @@
 import sys
 
+from PyQt5.QtGui import QIcon
 from PyQt5.QtWidgets import  *
 
 
@@ -18,6 +19,9 @@ if __name__ == '__main__':
     btn.setParent(w)
 
     label = QLabel("账号",w)
+
+    # 设置图表
+    w.setWindowIcon(QIcon("hollow.jpg"))
 
     #展示窗口
     # w.setGeometry(20,20,30,30)
