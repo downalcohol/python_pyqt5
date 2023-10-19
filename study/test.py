@@ -7,7 +7,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     # QMainWindow对象
-    ui = uic.loadUi("./untitled.ui")
+    ui = uic.loadUi("./login.ui")
 
     # 显示
     ui.show()
