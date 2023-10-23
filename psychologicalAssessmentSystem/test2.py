@@ -9,8 +9,8 @@ class SimpleChatBotApp(QWidget):
         self.questions = ["What is your favorite color?", "What's the weather like today?", "Do you have any plans for the weekend?"]
         self.current_question = 0
         self.delay_timer = QTimer(self)
-        self.delay_timer.timeout.connect(self.ask_question)
-        self.send_welcome_message()  # 在应用启动时发送欢迎消息
+        self.delay_timer.timeout.connect(self.start_conversation)
+        self.delay_timer.start(5000)  # 启动5秒的延迟
 
     def initUI(self):
         self.chat_history = QTextEdit(self)
@@ -36,22 +36,24 @@ class SimpleChatBotApp(QWidget):
         # 显示用户消息
         self.chat_history.append("You: " + user_message)
 
-        self.handle_user_response(user_message)
+        # 获取AI的回复
+        ai_response = self.get_ai_response()
+        self.chat_history.append("AI: " + ai_response)
+
+    def start_conversation(self):
+        self.delay_timer.stop()
+        self.send_welcome_message()  # 在应用启动后5秒发送欢迎消息
 
     def send_welcome_message(self):
-        greeting = "Hello! I'm here to chat with you."  # 发送问候语
-        self.chat_history.append("AI: " + greeting)
-        self.delay_timer.start(0)  # 立即开始提问
+        welcome_message = "Hello! I'm here to chat with you."  # 发送欢迎消息
+        self.chat_history.append("AI: " + welcome_message)
 
-    def handle_user_response(self, user_response):
-        if self.current_question == 0:
-            self.delay_timer.start(5000)  # 设置5秒延迟，等待用户回复
+    def get_ai_response(self):
+        # 获取当前问题
+        current_question = self.questions[self.current_question]
+        self.current_question = (self.current_question + 1) % len(self.questions)  # 切换到下一个问题
 
-    def ask_question(self):
-        if self.current_question < len(self.questions):
-            current_question = self.questions[self.current_question]
-            self.chat_history.append("AI: " + current_question)
-            self.current_question += 1
+        return current_question
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

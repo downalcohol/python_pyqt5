@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'login.ui'
+# Form implementation generated from reading ui file 'loginForm.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.9
 #
@@ -21,24 +21,24 @@ class Ui_form_login(object):
         self.login_form = QtWidgets.QGridLayout(self.layoutWidget)
         self.login_form.setContentsMargins(0, 0, 0, 0)
         self.login_form.setObjectName("login_form")
-        self.line_userName = QtWidgets.QLineEdit(self.layoutWidget)
-        self.line_userName.setObjectName("line_userName")
-        self.login_form.addWidget(self.line_userName, 2, 1, 1, 1)
+        self.line_password = QtWidgets.QLineEdit(self.layoutWidget)
+        self.line_password.setObjectName("line_password")
+        self.login_form.addWidget(self.line_password, 2, 1, 1, 1)
         self.label_password = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setPointSize(15)
         self.label_password.setFont(font)
         self.label_password.setObjectName("label_password")
         self.login_form.addWidget(self.label_password, 2, 0, 1, 1)
-        self.lineEdit_8 = QtWidgets.QLineEdit(self.layoutWidget)
-        self.lineEdit_8.setObjectName("lineEdit_8")
-        self.login_form.addWidget(self.lineEdit_8, 1, 1, 1, 1)
-        self.line_userName_2 = QtWidgets.QLabel(self.layoutWidget)
+        self.line_userName = QtWidgets.QLineEdit(self.layoutWidget)
+        self.line_userName.setObjectName("line_userName")
+        self.login_form.addWidget(self.line_userName, 1, 1, 1, 1)
+        self.label_userName = QtWidgets.QLabel(self.layoutWidget)
         font = QtGui.QFont()
         font.setPointSize(15)
-        self.line_userName_2.setFont(font)
-        self.line_userName_2.setObjectName("line_userName_2")
-        self.login_form.addWidget(self.line_userName_2, 1, 0, 1, 1)
+        self.label_userName.setFont(font)
+        self.label_userName.setObjectName("label_userName")
+        self.login_form.addWidget(self.label_userName, 1, 0, 1, 1)
         self.title = QtWidgets.QLabel(form_login)
         self.title.setEnabled(True)
         self.title.setGeometry(QtCore.QRect(0, 0, 400, 71))
@@ -66,6 +66,6 @@ class Ui_form_login(object):
         _translate = QtCore.QCoreApplication.translate
         form_login.setWindowTitle(_translate("form_login", "Form"))
         self.label_password.setText(_translate("form_login", "密码"))
-        self.line_userName_2.setText(_translate("form_login", "账号"))
+        self.label_userName.setText(_translate("form_login", "账号"))
         self.title.setText(_translate("form_login", "心理测评系统"))
         self.btn_login.setText(_translate("form_login", "登录"))
